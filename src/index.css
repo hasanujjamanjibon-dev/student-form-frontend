@@ -34,3 +34,59 @@ body {
   background-attachment: fixed;
 
 }
+
+@media print {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+  }
+
+  /* পুরো ফর্ম wrapper কে ছোট করার জন্য */
+  .print-scale {
+    zoom: 0.66;
+    /* সবকিছু shrink করবে */
+    transform-origin: top left;
+  }
+
+  /* টেবিল সবসময় ফুল-উইডথ */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 9pt;
+    table-layout: fixed;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #000 !important;
+    padding: 2px !important;
+  }
+
+  /* পেজ ব্রেক নিষিদ্ধ */
+  * {
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    /* চাইলে landscape করতে পারেন */
+    margin: 2mm;
+    /* margin ছোট করলে বেশি জায়গা ফিট হবে */
+  }
+
+  td,
+  th {
+    white-space: nowrap;
+    /* Text line break বন্ধ করবে */
+  }
+
+  /* input {
+    white-space: normal;
+  } */
+
+}
