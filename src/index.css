@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  user-select: none;
+  /* Prevent copy selection */
+  font-family: 'Arial', sans-serif;
+}
+
+.input {
+  @apply w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none;
+}
+
+.degreeTable>td,
+.languageTest>td {
+  @apply px-6 py-4 whitespace-nowrap border border-gray-200;
+}
+
+.tableDataPadding {
+  @apply p-4 whitespace-nowrap border border-gray-200;
+}
+
+@media print {
+  .print-bg {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
+
+body {
+  background-image: url(/public/sakura-bg.png);
+  background-attachment: fixed;
+
+}
