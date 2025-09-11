@@ -21,13 +21,7 @@ body {
   @apply p-4 whitespace-nowrap border border-gray-200;
 }
 
-@media print {
-  .print-bg {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    color-adjust: exact !important;
-  }
-}
+
 
 body {
   background-image: url(/public/sakura-bg.png);
@@ -42,7 +36,9 @@ body {
     margin: 0;
     padding: 0;
     background-image: none;
+    font-size: 10pt;
   }
+
 
   /* পুরো ফর্ম wrapper কে ছোট করার জন্য */
   .print-scale {
@@ -55,8 +51,8 @@ body {
   table {
     width: 100% !important;
     border-collapse: collapse !important;
-    font-size: 9pt;
-    table-layout: fixed;
+
+    width: auto;
   }
 
   table th,
@@ -70,6 +66,7 @@ body {
     page-break-before: avoid !important;
     page-break-after: avoid !important;
     page-break-inside: avoid !important;
+    margin: 0;
   }
 
   @page {
@@ -85,8 +82,20 @@ body {
     /* Text line break বন্ধ করবে */
   }
 
-  /* input {
-    white-space: normal;
-  } */
+  section {
+    margin: 15px auto !important;
+  }
 
+  #file_title {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #body {
+    padding: 10px !important;
+  }
+
+  textarea {
+    height: fit-content;
+  }
 }
