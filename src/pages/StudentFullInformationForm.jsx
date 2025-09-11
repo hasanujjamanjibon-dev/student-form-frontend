@@ -311,19 +311,7 @@ const StudentFullInformationForm = () => {
                   />
                 </div>
               </div>
-              <div className='space-y-1 mt-4'>
-                <label
-                  htmlFor='sponsor-present-address'
-                  className='block text-sm font-medium text-gray-700'
-                >
-                  Present Address
-                </label>
-                <textarea
-                  id='sponsor-present-address'
-                  name='sponsorPresentAddress'
-                  className='input h-20 resize-none'
-                ></textarea>
-              </div>
+
               <div className='space-y-1 mt-4'>
                 <label
                   htmlFor='sponsor-permanent-address'
@@ -576,16 +564,14 @@ const StudentFullInformationForm = () => {
                       <th className='px-6 py-3 border border-gray-200'>
                         Degree
                       </th>
-                      <th className='px-6 py-3 border border-gray-200'>
+                      <th className='px-6 py-3 border  border-gray-200'>
                         Name of School
                       </th>
                       <th className='px-6 py-3 border border-gray-200'>
                         School Address
                       </th>
-                      <th className='px-6 py-3 border border-gray-200'>
-                        Admission Year
-                      </th>
-                      <th className='px-6 py-3   border border-gray-200'>
+
+                      <th className='px-6 py-3   border  border-gray-200'>
                         Graduation Year
                       </th>
                     </tr>
@@ -605,6 +591,7 @@ const StudentFullInformationForm = () => {
                               className='input bg-gray-50 min-w-[80px]'
                             />
                           </td>
+
                           <td
                             className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
                               }`}
@@ -619,21 +606,10 @@ const StudentFullInformationForm = () => {
                             className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
                               }`}
                           >
-                            <input
-                              type='text'
-                              name={`${degree}SchoolAddress`}
-                              className='input min-w-[120px]'
-                            />
-                          </td>
-                          <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
-                          >
                             <div className='relative'>
                               <input
-                                type='date'
-                                name={`${degree}AdmissionYear`}
-                                placeholder='mm/dd/yyyy'
+                                type='text'
+                                name={`${degree}SchoolAddress`}
                                 className='input pr-10 min-w-[120px]'
                               />
                             </div>
@@ -646,8 +622,9 @@ const StudentFullInformationForm = () => {
                               <input
                                 type='date'
                                 name={`${degree}GraduationYear`}
-                                placeholder='mm/dd/yyyy'
-                                className='input pr-10 min-w-[120px]'
+                                placeholder='dd/mm/yyyy'
+                                pattern="\d{2}-\d{2-\d{4}"
+                                className='input  pr-10 min-w-[120px]'
                               />
                             </div>
                           </td>
@@ -676,6 +653,21 @@ const StudentFullInformationForm = () => {
                   id='college-university-name'
                   name='currentCollegeUniversityName'
                   placeholder='এখন যেখানে পড়ালেখা করছেন তার নাম'
+                  className='input'
+                />
+              </div>
+              <div className='space-y-1 mb-4'>
+                <label
+                  htmlFor='college-university-name'
+                  className='block text-sm font-medium text-gray-700'
+                >
+                  College/University Full Address
+                </label>
+                <input
+                  type='text'
+                  id='college-university-name'
+                  name='currentCollegeUniversityAddress'
+                  placeholder='এখন যেখানে পড়ালেখা করছেন তার ঠিকানা'
                   className='input'
                 />
               </div>
@@ -751,19 +743,7 @@ const StudentFullInformationForm = () => {
                     className='input'
                   />
                 </div>
-                <div className='space-y-1'>
-                  <label
-                    htmlFor='status'
-                    className='block text-sm font-medium text-gray-700'
-                  >
-                    Status
-                  </label>
-                  <select id='status' name='currentStatus' className='input'>
-                    <option>-- Select Status --</option>
-                    <option>Running</option>
-                    <option>Completed</option>
-                  </select>
-                </div>
+
               </div>
             </section>
 
@@ -787,10 +767,10 @@ const StudentFullInformationForm = () => {
                       <th className='px-6 py-3   border border-gray-200'>
                         Exam Date
                       </th>
-                      <th className='px-6 py-3   border border-gray-200'>
+                      <th className='px-6 py-3   border border-gray-200 whitespace-nowrap'>
                         Result Publish Date
                       </th>
-                      <th className='px-6 py-3   border border-gray-200'>
+                      <th className='px-6 py-3   border border-gray-200 whitespace-nowrap'>
                         Expected Exam Date
                       </th>
                     </tr>

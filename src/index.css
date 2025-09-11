@@ -37,12 +37,12 @@ body {
     padding: 0;
     background-image: none;
     font-size: 10pt;
+    /* transform: scale(1); */
   }
 
 
   /* পুরো ফর্ম wrapper কে ছোট করার জন্য */
   .print-scale {
-    zoom: 0.66;
     /* সবকিছু shrink করবে */
     transform-origin: top left;
   }
@@ -51,7 +51,6 @@ body {
   table {
     width: 100% !important;
     border-collapse: collapse !important;
-
     width: auto;
   }
 
@@ -83,16 +82,17 @@ body {
   }
 
   section {
-    margin: 15px auto !important;
+    margin: 8px auto !important;
   }
 
   #file_title {
     padding: 0 !important;
     margin: 0 !important;
+    border: 0;
   }
 
   #body {
-    padding: 10px !important;
+    padding: 4px !important;
   }
 
   textarea {

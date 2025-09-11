@@ -49,7 +49,7 @@ export default function PrintPreview() {
     sponsorName,
     sponsorFatherName,
     sponsorMotherName,
-    // sponsorPresentAddress,
+
     sponsorPermanentAddress,
     businessName,
     businessType,
@@ -67,31 +67,31 @@ export default function PrintPreview() {
     siblingOccupation,
     PrimarySchoolName,
     PrimarySchoolAddress,
-    // PrimaryAdmissionYear,
+
     PrimaryGraduationYear,
     SSCSchoolName,
     SSCSchoolAddress,
-    // SSCAdmissionYear,
+
     SSCGraduationYear,
     HSC_DiplomaSchoolName,
     HSC_DiplomaSchoolAddress,
-    // HSC_DiplomaAdmissionYear,
+
     HSC_DiplomaGraduationYear,
     HonorsSchoolName,
     HonorsSchoolAddress,
-    // HonorsAdmissionYear,
+
     HonorsGraduationYear,
     MastersSchoolName,
     MastersSchoolAddress,
-    // MastersAdmissionYear,
+
     MastersGraduationYear,
     currentCollegeUniversityName,
     currentSubject,
     currentRollNo,
     currentRegistrationNo,
     currentAcademicYear,
-    // currentSession,
-    // currentStatus,
+
+    currentCollegeUniversityAddress,
     JLPTScore,
     JLPTExamDate,
     JLPTResultPublishDate,
@@ -123,11 +123,11 @@ export default function PrintPreview() {
         </div>
         <form action="POST">
           {/* Student Info */}
-          <section className="border-2 border-black ">
+          <section className="border-2 border-black overflow-x-auto">
             <div className="bg-[#e0e0e0] text-center font-bold border-b-2  border-black p-1 text-xs md:text-xl">
               STUDENT'S INFORMATION FOR DOCUMENT
             </div>
-            <table className="w-full border-collapse border-2 border-[#b3b2b2] ">
+            <table className="w-full border-collapse border-2 border-[#b3b2b2]  table-auto md:table-fixed">
               <tbody>
 
                 <tr className="border-b-2 border-[#b3b2b2]">
@@ -165,11 +165,11 @@ export default function PrintPreview() {
           </section>
 
           {/* Guarantor Info */}
-          <section className="border-2 border-black  my-8">
+          <section className="border-2 border-black overflow-x-auto my-8">
             <div className="bg-[#e0e0e0] text-center font-bold border-b-2  border-black p-1 text-xs md:text-xl">
               GUARANTOR'S INFORMATION
             </div>
-            <table className="w-full border-collapse border-2 border-[#b3b2b2]">
+            <table className="w-full border-collapse border-2 border-[#b3b2b2] table-auto md:table-fixed">
               <tbody>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold w-1/4 bg-[#F2F2F2]">Sponsor's Name:</td>
@@ -207,9 +207,9 @@ export default function PrintPreview() {
             </table>
           </section>
           {/* Relation Information */}
-          <section className="max-w-5xl mx-auto  bg-white">
+          <section className="max-w-5xl mx-auto overflow-x-auto  bg-white">
             <div className="overflow-x-auto">
-              <table className="w-full border border-black border-collapse text-sm md:text-base text-center">
+              <table className="w-full border border-black border-collapse text-sm md:text-base text-center table-auto md:table-fixed">
                 <thead >
                   <tr className="bg-[#e0e0e0] border border-black">
                     <th className="border border-black p-1">Name</th>
@@ -243,73 +243,74 @@ export default function PrintPreview() {
             </div>
           </section>
           {/* Guarantor Info */}
-          <section className="border-2 border-black  my-8">
+          <section className="border-2 border-black overflow-x-auto my-8">
             <div className="bg-[#e0e0e0] text-center font-bold border-b-2  border-black p-1 text-xs md:text-xl">
               Educational Record
             </div>
             <table className="w-full border-collapse border-2 border-[#b3b2b2] table-auto md:table-fixed">
               <thead >
                 <tr className="bg-[#e0e0e0] font-bold">
-                  <th colSpan={1} className="border border-black    p-1 min-w-fit">Degree</th>
-                  <th colSpan={2} className="border border-black p-1 min-w-fit">Name of School</th>
-                  <th colSpan={2} className="border border-black p-1 min-w-fit">School Address</th>
-                  <th colSpan={1} className="border border-black p-1 min-w-fit">Graduation Year</th>
+                  <th colSpan={1} className="border border-black p-1  ">Degree</th>
+                  <th colSpan={2} className="border border-black p-1  ">Name of School</th>
+                  <th colSpan={3} className="border border-black p-1  ">School Address</th>
+                  <th className="border border-black p-1  ">Graduation Year</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td colSpan={1} className="border border-black font-bold p-1 size-fit">Primary School</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={PrimarySchoolName} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={PrimarySchoolAddress} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={1} className="border border-black p-1"><input defaultValue={PrimaryGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={1} className="border border-black font-bold p-1 ">Primary School</td>
+                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={PrimarySchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={PrimarySchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input defaultValue={PrimaryGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
 
                 </tr>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 size-fit">S.S.C</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={SSCSchoolName} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={SSCSchoolAddress} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={1} className="border border-black p-1"><input defaultValue={SSCGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={SSCSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={SSCSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input defaultValue={SSCGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
 
                 </tr>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 size-fit">H.S.C/Diploma</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={HSC_DiplomaSchoolName} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={HSC_DiplomaSchoolAddress} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={1} className="border border-black p-1"><input defaultValue={HSC_DiplomaGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={HSC_DiplomaSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={HSC_DiplomaSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input defaultValue={HSC_DiplomaGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
 
                 </tr>
                 <tr>
-                  <td colSpan={1} className="border border-black font-bold p-1 size-fit">Honor's</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={HonorsSchoolName} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={HonorsSchoolAddress} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={1} className="border border-black p-1"><input defaultValue={HonorsGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={1} className="border border-black font-bold p-1 size-fit">Honour's</td>
+                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={HonorsSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={HonorsSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input defaultValue={HonorsGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 size-fit">Master's</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={MastersSchoolName} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={MastersSchoolAddress} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={1} className="border border-black p-1"><input defaultValue={MastersGraduationYear
+                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={MastersSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={MastersSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input defaultValue={MastersGraduationYear
                   } className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
               </tbody>
             </table>
           </section>
           {/* Student Running Academic Details */}
-          <section className="border-2 border-black  my-8">
-            <div className="bg-[#e0e0e0] text-center font-bold border-b-2  border-black p-1 text-xs md:text-xl">
+          <section className="border-2 border-black  my-8 overflow-x-auto">
+            <div className="bg-[#e0e0e0] text-center font-bold border-b-2  w-full border-black p-1 text-xs md:text-xl">
               Student Running Academic Details
             </div>
             <table className="w-full border-collapse border-2 border-[#b3b2b2] table-auto md:table-fixed">
               <thead >
                 <tr className="bg-[#e0e0e0]">
-                  <th colSpan={2} className="border border-black p-1 min-w-fit">College/University Name</th>
-                  <th className="border border-black p-1 min-w-fit">Subject</th>
-                  <th className="border border-black p-1 min-w-fit">Roll No.</th>
-                  <th className="border border-black p-1 min-w-fit">Reg. No.</th>
-                  <th className="border border-black p-1 min-w-fit">Year</th>
+                  <th colSpan={2} className="border border-black p-1  ">College/University Name</th>
+                  <th className="border border-black p-1  ">Subject</th>
+                  <th className="border border-black p-1  ">Roll No.</th>
+                  <th className="border border-black p-1  ">Reg. No.</th>
+                  <th className="border border-black p-1  ">Year</th>
                 </tr>
               </thead>
               <tbody>
+
                 <tr>
                   <td colSpan={2} className="border border-black p-1"><input defaultValue={currentCollegeUniversityName} className="w-full  rounded px-2 outline-none" /></td>
                   <td className="border border-black p-1"><input defaultValue={currentSubject} className="w-full  rounded px-2 outline-none" /></td>
@@ -318,21 +319,44 @@ export default function PrintPreview() {
                   <td className="border border-black p-1"><input defaultValue={currentAcademicYear} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
               </tbody>
+              <thead >
+                <tr className="bg-[#e0e0e0]">
+                  <th colSpan={6} className="border text-left border-black p-1  px-2">College/University Full Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan={6} className="border border-black p-1"><input defaultValue={currentCollegeUniversityAddress} className="w-full  rounded px-2 outline-none" /></td>
+                </tr>
+              </tbody>
             </table>
+            {/* <table className="w-full border-collapse border-2 border-[#b3b2b2] table-auto md:table-fixed">
+              <thead >
+                <tr className="bg-[#e0e0e0]">
+                  <th colSpan={6} className="border text-left border-black p-1  px-2">College/University Full Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan={6} className="border border-black p-1"><input defaultValue={currentCollegeUniversityAddress} className="w-full  rounded px-2 outline-none" /></td>
+
+                </tr>
+              </tbody>
+            </table> */}
           </section>
           {/*   Japanese Language Test &lang;N5/N4&rang; */}
-          <section className="border-2 border-black  mt-8">
+          <section className="border-2 border-black  mt-8 overflow-x-auto">
             <div className="bg-[#e0e0e0] text-center font-bold border-b-2  border-black p-1 text-xs md:text-xl">
               Japanese Language Test &lang;N5/N4&rang;
             </div>
-            <table className="w-full border-collapse border-2  border-[#b3b2b2] table-auto md:table-fixed">
+            <table className="w-full border-collapse border-2  border-[#b3b2b2] table-auto md:table-fixed " >
               <thead >
                 <tr className="bg-[#e0e0e0] ">
-                  <th colSpan={2} className="border border-black p-1 min-w-fit">Test Name</th>
-                  <th colSpan={2} className="border border-black p-1 min-w-fit">Score</th>
-                  <th colSpan={3} className="border border-black p-1 min-w-fit">Exam Date	</th>
-                  <th colSpan={3} className="border border-black p-1 min-w-fit">Result Publish Date</th>
-                  <th colSpan={3} className="border border-black p-1 min-w-fit">Expected Exam Date</th>
+                  <th colSpan={2} className="border border-black p-1  ">Test Name</th>
+                  <th colSpan={2} className="border border-black p-1  ">Score</th>
+                  <th colSpan={3} className="border border-black p-1  ">Exam Date	</th>
+                  <th colSpan={3} className="border border-black p-1  ">Result Publish Date</th>
+                  <th colSpan={3} className="border border-black p-1  ">Expected Exam Date</th>
                 </tr>
               </thead>
               <tbody className="text-center">
