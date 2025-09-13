@@ -24,9 +24,10 @@ body {
 
 
 body {
-  background-image: url(/public/sakura-bg.png);
+  background: url('/public/sakura-bg.jpg') center no-repeat;
+  background-size: cover;
   background-attachment: fixed;
-
+  background-position: fixed;
 }
 
 @media print {
@@ -36,7 +37,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: none;
-    font-size: 10pt;
+    font-size: 9pt !important;
     /* transform: scale(1); */
   }
 
@@ -82,17 +83,17 @@ body {
   }
 
   section {
-    margin: 8px auto !important;
+    margin: 10px auto !important;
   }
 
   #file_title {
     padding: 0 !important;
     margin: 0 !important;
-    border: 0;
+    border: 0 !important;
   }
 
   #body {
-    padding: 4px !important;
+    padding: 6px !important;
   }
 
   textarea {

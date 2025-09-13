@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import usePreventActions from '../components/usePreventActions';
+import Swal from 'sweetalert2';
 
 const StudentFullInformationForm = () => {
   const [loading, setLoading] = useState(false);
-  usePreventActions();
   const navigate = useNavigate();
   const baseURL = import.meta.env.VITE_baseURL;
   const handleSubmit = async (event) => {
@@ -20,7 +20,14 @@ const StudentFullInformationForm = () => {
     const regex = /^[1-9][0-9]{9}$/;
 
     if (!regex.test(data.studentMobile)) {
-      alert(' নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।');
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: `ছাত্র/ছাত্রীর নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+        showConfirmButton: false,
+        timer: 2000
+      });
+
       input.focus();
     } else {
       data.studentMobile = `+880${data.studentMobile}`
@@ -28,7 +35,13 @@ const StudentFullInformationForm = () => {
     }
 
     if (!regex.test(data.fatherMobile)) {
-      alert(' নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।');
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: `বাবার নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+        showConfirmButton: false,
+        timer: 2000
+      });
       input.focus();
     } else {
       data.fatherMobile = `+880${data.fatherMobile}`
@@ -36,10 +49,43 @@ const StudentFullInformationForm = () => {
     }
 
     if (!regex.test(data.motherMobile)) {
-      alert(' নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।');
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: `মা'তার নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+        showConfirmButton: false,
+        timer: 2000
+      });
       input.focus();
     } else {
       data.motherMobile = `+880${data.motherMobile}`
+      // allow submit
+    }
+
+    if (!regex.test(data.officeNumber)) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: `অফিস নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+        showConfirmButton: false,
+        timer: 2000
+      });
+      input.focus();
+    } else {
+      data.officeNumber = `+880${data.officeNumber}`
+      // allow submit
+    }
+    if (!regex.test(data.studentAnotherNumber)) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: `ছাত্র/ছাত্রীর বিকল্প নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+        showConfirmButton: false,
+        timer: 2000
+      });
+      input.focus();
+    } else {
+      data.studentAnotherNumber = `+880${data.studentAnotherNumber}`
       // allow submit
     }
 
@@ -59,9 +105,15 @@ const StudentFullInformationForm = () => {
       });
       const result = await response.json();
 
-      console.log('Success:', data);
 
       if (result.success) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: `Data Submitted Successfully!`,
+          showConfirmButton: false,
+          timer: 1500
+        });
         // Redirect user to print preview page after 2 seconds
         setTimeout(() => {
           // navigate('/print-preview');
@@ -75,7 +127,7 @@ const StudentFullInformationForm = () => {
     }
   };
   return (
-    <div className='max-w-5xl mx-auto text-left p-2'>
+    <div className='max-w-5xl mx-auto text-left p-2 shadow-lg  shadow-gray-300'>
       {/* Card */}
       <div className='bg-white shadow-lg rounded-xl p-6 space-y-8'>
         <h1 className='text-center text-lg sm:text-2xl font-bold border-b pb-4'>

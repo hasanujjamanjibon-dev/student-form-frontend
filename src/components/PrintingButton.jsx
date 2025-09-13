@@ -10,7 +10,7 @@ const PrintingButton = () => {
     setTimeout(() => {
       window.print();
       setIsPrinting(false);
-    }, 1500); // অ্যানিমেশন চলবে ১.৫ সেকেন্ড
+    }, 700); // অ্যানিমেশন চলবে ১.৫ সেকেন্ড
   };
 
   return (
@@ -18,10 +18,9 @@ const PrintingButton = () => {
       onClick={handlePrint}
       disabled={isPrinting}
       className={`print:hidden relative px-6 py-2 rounded-lg font-semibold text-white shadow-md transition-all duration-300 
-        ${
-          isPrinting
-            ? 'bg-red-800 cursor-not-allowed'
-            : 'bg-red-900 hover:bg-red-700'
+        ${isPrinting
+          ? 'bg-blue-800 cursor-not-allowed'
+          : 'bg-blue-900 hover:bg-blue-700'
         }
       `}
     >

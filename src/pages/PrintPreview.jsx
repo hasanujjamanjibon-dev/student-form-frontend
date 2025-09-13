@@ -132,33 +132,33 @@ export default function PrintPreview() {
 
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 font-bold bg-[#F2F2F2] border-[#b3b2b2]">Student's Name:</td>
-                  <td className="p-1"><input defaultValue={studentName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={studentName} className="w-full  rounded px-2 outline-none" /></td>
                   <td className="p-1 border-x-2 font-bold bg-[#F2F2F2] text-center border-[#b3b2b2]">Mobile:</td>
-                  <td className="p-1"><input defaultValue={studentMobile} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={studentMobile} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 font-bold bg-[#F2F2F2] border-[#b3b2b2]" >Father's Name:</td>
-                  <td className="p-1"><input defaultValue={fatherName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={fatherName} className="w-full  rounded px-2 outline-none" /></td>
                   <td className="p-1 border-x-2 font-bold bg-[#F2F2F2] text-center border-[#b3b2b2]">Mobile:</td>
-                  <td className="p-1"><input defaultValue={fatherMobile} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={fatherMobile} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 font-bold bg-[#F2F2F2] border-[#b3b2b2]">Mother's Name:</td>
-                  <td className="p-1"><input defaultValue={motherName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={motherName} className="w-full  rounded px-2 outline-none" /></td>
                   <td className="p-1 border-x-2 font-bold bg-[#F2F2F2] text-center border-[#b3b2b2]">Mobile:</td>
-                  <td className="p-1"><input defaultValue={motherMobile} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={motherMobile} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 font-bold bg-[#F2F2F2] border-[#b3b2b2]">Date of Birth (dd/mm/yyyy) :</td>
-                  <td className="p-1" colSpan="3"><input defaultValue={dob} type="text" className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1" colSpan="3"><input readOnly defaultValue={dob} type="text" className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 font-bold bg-[#F2F2F2] border-[#b3b2b2]">Present Address:</td>
-                  <td className="p-1" colSpan="3"><textarea defaultValue={presentAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
+                  <td className="p-1" colSpan="3"><textarea readOnly defaultValue={presentAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
                 </tr>
                 <tr>
                   <td className="p-1 border-r-2 font-bold bg-[#F2F2F2] border-[#b3b2b2]">Permanent Address:</td>
-                  <td className="p-1" colSpan="3"><textarea defaultValue={permanentAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
+                  <td className="p-1" colSpan="3"><textarea readOnly defaultValue={permanentAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
                 </tr>
               </tbody>
             </table>
@@ -173,35 +173,35 @@ export default function PrintPreview() {
               <tbody>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold w-1/4 bg-[#F2F2F2]">Sponsor's Name:</td>
-                  <td className="p-1" colSpan="3"><input defaultValue={sponsorName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1" colSpan="3"><input readOnly defaultValue={sponsorName} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold  bg-[#F2F2F2]">Sponsor's Father's Name:</td>
-                  <td className="p-1" colSpan="3"><input defaultValue={sponsorFatherName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1" colSpan="3"><input readOnly defaultValue={sponsorFatherName} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold  bg-[#F2F2F2]">Sponsor's Mother's Name:</td>
-                  <td className="p-1" colSpan="3"><input defaultValue={sponsorMotherName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1" colSpan="3"><input readOnly defaultValue={sponsorMotherName} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold  bg-[#F2F2F2]">Permanent Address:</td>
-                  <td className="p-1" colSpan="3"><textarea defaultValue={sponsorPermanentAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
+                  <td className="p-1" colSpan="3"><textarea readOnly defaultValue={sponsorPermanentAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold  bg-[#F2F2F2]">Business/Company Name:</td>
-                  <td className="p-1"><input defaultValue={businessName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={businessName} className="w-full  rounded px-2 outline-none" /></td>
                   <td className="p-1 border-x-2 border-[#b3b2b2] font-bold  text-center bg-[#F2F2F2]">Type of Business:</td>
-                  <td className="p-1"><input defaultValue={businessType} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={businessType} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr className="border-b-2 border-[#b3b2b2]">
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold  bg-[#F2F2F2]">Business Address:</td>
-                  <td className="p-1" colSpan="3"><textarea defaultValue={businessAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
+                  <td className="p-1" colSpan="3"><textarea readOnly defaultValue={businessAddress} className="w-full  rounded px-2 outline-none resize-none" /></td>
                 </tr>
                 <tr>
                   <td className="p-1 border-r-2 border-[#b3b2b2] font-bold  bg-[#F2F2F2]">Office Number:</td>
-                  <td className="p-1"><input defaultValue={officeNumber} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={officeNumber} className="w-full  rounded px-2 outline-none" /></td>
                   <td className="p-1 border-x-2 border-[#b3b2b2] font-bold text-center   bg-[#F2F2F2]">Student Another Number:</td>
-                  <td className="p-1"><input defaultValue={studentAnotherNumber} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="p-1"><input readOnly defaultValue={studentAnotherNumber} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
               </tbody>
             </table>
@@ -212,7 +212,7 @@ export default function PrintPreview() {
               <table className="w-full border border-black border-collapse text-sm md:text-base text-center table-auto md:table-fixed">
                 <thead >
                   <tr className="bg-[#e0e0e0] border border-black">
-                    <th className="border border-black p-1">Name</th>
+                    <th colSpan={2} className="border border-black p-1">Name</th>
                     <th className="border border-black p-1">Relation</th>
                     <th className="border border-black p-1">Date of Birth</th>
                     <th className="border border-black p-1">Occupation</th>
@@ -220,23 +220,22 @@ export default function PrintPreview() {
                 </thead>
                 <tbody className="border-black border">
                   <tr>
-                    <td className="border border-black p-1"><input defaultValue={fatherNameFamily} className="w-full  rounded px-2 outline-none" /></td>
+                    <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={fatherNameFamily} className="w-full  rounded px-2 outline-none" /></td>
                     <td className="border border-black p-1">Father</td>
-                    <td className="border border-black p-1"><input defaultValue={fatherDOB} className="w-full  rounded px-2 outline-none" /></td>
-                    <td className="border border-black p-1"><input defaultValue={fatherOccupation} className="w-full  rounded px-2 outline-none" /></td>
+                    <td className="border border-black p-1"><input readOnly defaultValue={fatherDOB} className="w-full  rounded px-2 outline-none" /></td>
+                    <td className="border border-black p-1"><input readOnly defaultValue={fatherOccupation} className="w-full  rounded px-2 outline-none" /></td>
                   </tr>
                   <tr>
-                    <td className="border border-black p-1"><input defaultValue={motherNameFamily} className="w-full  rounded px-2 outline-none" /></td>
+                    <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={motherNameFamily} className="w-full  rounded px-2 outline-none" /></td>
                     <td className="border border-black p-1">Mother</td>
-                    <td className="border border-black p-1"><input defaultValue={motherDOB} className="w-full  rounded px-2 outline-none" /></td>
-                    <td className="border border-black p-1"><input defaultValue={motherOccupation} className="w-full  rounded px-2 outline-none" /></td>
+                    <td className="border border-black p-1"><input readOnly defaultValue={motherDOB} className="w-full  rounded px-2 outline-none" /></td>
+                    <td className="border border-black p-1"><input readOnly defaultValue={motherOccupation} className="w-full  rounded px-2 outline-none" /></td>
                   </tr>
                   <tr>
-                    <td className="border border-black p-1"><input defaultValue={siblingName} className="w-full  rounded px-2 outline-none" /></td>
+                    <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={siblingName} className="w-full  rounded px-2 outline-none" /></td>
                     <td className="border border-black p-1">Brother/Sister</td>
-
-                    <td className="border border-black p-1"><input defaultValue={siblingDOB} className="w-full  rounded px-2 outline-none" /></td>
-                    <td className="border border-black p-1"><input defaultValue={siblingOccupation} className="w-full  rounded px-2 outline-none" /></td>
+                    <td className="border border-black p-1"><input readOnly defaultValue={siblingDOB} className="w-full  rounded px-2 outline-none" /></td>
+                    <td className="border border-black p-1"><input readOnly defaultValue={siblingOccupation} className="w-full  rounded px-2 outline-none" /></td>
                   </tr>
                 </tbody>
               </table>
@@ -253,42 +252,39 @@ export default function PrintPreview() {
                   <th colSpan={1} className="border border-black p-1  ">Degree</th>
                   <th colSpan={2} className="border border-black p-1  ">Name of School</th>
                   <th colSpan={3} className="border border-black p-1  ">School Address</th>
-                  <th className="border border-black p-1  ">Graduation Year</th>
+                  <th className="border border-black p-1">Graduation Year</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 ">Primary School</td>
-                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={PrimarySchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={PrimarySchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={PrimaryGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
-
+                  <td colSpan={2} className="border border-black p-1"><textarea readOnly defaultValue={PrimarySchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea readOnly defaultValue={PrimarySchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={PrimaryGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 size-fit">S.S.C</td>
-                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={SSCSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={SSCSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={SSCGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
-
+                  <td colSpan={2} className="border border-black p-1"><textarea readOnly defaultValue={SSCSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea readOnly defaultValue={SSCSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={SSCGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 size-fit">H.S.C/Diploma</td>
-                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={HSC_DiplomaSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={HSC_DiplomaSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={HSC_DiplomaGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
-
+                  <td colSpan={2} className="border border-black p-1"><textarea readOnly defaultValue={HSC_DiplomaSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea readOnly defaultValue={HSC_DiplomaSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={HSC_DiplomaGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 size-fit">Honour's</td>
-                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={HonorsSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={HonorsSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={HonorsGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><textarea readOnly defaultValue={HonorsSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea readOnly defaultValue={HonorsSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={HonorsGraduationYear} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={1} className="border border-black font-bold p-1 size-fit">Master's</td>
-                  <td colSpan={2} className="border border-black p-1"><textarea defaultValue={MastersSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><textarea defaultValue={MastersSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={MastersGraduationYear
+                  <td colSpan={2} className="border border-black p-1"><textarea readOnly defaultValue={MastersSchoolName} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><textarea readOnly defaultValue={MastersSchoolAddress} className="w-full resize-none rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={MastersGraduationYear
                   } className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
               </tbody>
@@ -312,37 +308,24 @@ export default function PrintPreview() {
               <tbody>
 
                 <tr>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={currentCollegeUniversityName} className="w-full  rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={currentSubject} className="w-full  rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={currentRollNo} className="w-full  rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={currentRegistrationNo} className="w-full  rounded px-2 outline-none" /></td>
-                  <td className="border border-black p-1"><input defaultValue={currentAcademicYear} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={currentCollegeUniversityName} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={currentSubject} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={currentRollNo} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={currentRegistrationNo} className="w-full  rounded px-2 outline-none" /></td>
+                  <td className="border border-black p-1"><input readOnly defaultValue={currentAcademicYear} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
               </tbody>
               <thead >
                 <tr className="bg-[#e0e0e0]">
-                  <th colSpan={6} className="border text-left border-black p-1  px-2">College/University Full Address</th>
+                  <th colSpan={6} className="border  border-black p-1 text-center  px-2">College/University Full Address</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td colSpan={6} className="border border-black p-1"><input defaultValue={currentCollegeUniversityAddress} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={6} className="border border-black p-1"><input readOnly defaultValue={currentCollegeUniversityAddress} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
               </tbody>
             </table>
-            {/* <table className="w-full border-collapse border-2 border-[#b3b2b2] table-auto md:table-fixed">
-              <thead >
-                <tr className="bg-[#e0e0e0]">
-                  <th colSpan={6} className="border text-left border-black p-1  px-2">College/University Full Address</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colSpan={6} className="border border-black p-1"><input defaultValue={currentCollegeUniversityAddress} className="w-full  rounded px-2 outline-none" /></td>
-
-                </tr>
-              </tbody>
-            </table> */}
           </section>
           {/*   Japanese Language Test &lang;N5/N4&rang; */}
           <section className="border-2 border-black  mt-8 overflow-x-auto">
@@ -362,38 +345,38 @@ export default function PrintPreview() {
               <tbody className="text-center">
                 <tr>
                   <td colSpan={2} className="border text-left border-black p-1 font-bold">JLPT</td>
-                  <td colSpan={2} className="border  border-black p-1"><input defaultValue={JLPTScore} className="w-full  text-center rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border  border-black p-1"><input defaultValue={JLPTExamDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={JLPTResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={JLPTExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border  border-black p-1"><input readOnly defaultValue={JLPTScore} className="w-full  text-center rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border  border-black p-1"><input readOnly defaultValue={JLPTExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={JLPTResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={JLPTExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={2} className="border text-left border-black p-1 font-bold">NAT</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={NATScore} className="w-full  rounded px-2  text-center outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={NATExamDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={NATResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={NATExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={NATScore} className="w-full  rounded px-2  text-center outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={NATExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={NATResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={NATExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={2} className="border text-left border-black p-1 font-bold">JLCT</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={JLCTScore} className="w-full  rounded px-2  text-center  outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={JLCTExamDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={JLCTResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={JLCTExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={JLCTScore} className="w-full  rounded px-2  text-center  outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={JLCTExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={JLCTResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={JLCTExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={2} className="border text-left border-black p-1 font-bold">J. Test</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={J_TestScore} className="w-full  rounded px-2  text-center outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={J_TestExamDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={J_TestResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={J_TestExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={J_TestScore} className="w-full  rounded px-2  text-center outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={J_TestExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={J_TestResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={J_TestExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
                 <tr>
                   <td colSpan={2} className="border text-left border-black p-1 font-bold">Top J</td>
-                  <td colSpan={2} className="border border-black p-1"><input defaultValue={Top_JScore} className="w-full  rounded px-2  text-center  outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={Top_JExamDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={Top_JResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
-                  <td colSpan={3} className="border border-black p-1"><input defaultValue={Top_JExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={2} className="border border-black p-1"><input readOnly defaultValue={Top_JScore} className="w-full  rounded px-2  text-center  outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={Top_JExamDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={Top_JResultPublishDate} className="w-full  rounded px-2 outline-none" /></td>
+                  <td colSpan={3} className="border border-black p-1"><input readOnly defaultValue={Top_JExpectedExamDate} className="w-full  rounded px-2 outline-none" /></td>
                 </tr>
               </tbody>
             </table>
