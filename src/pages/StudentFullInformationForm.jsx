@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import usePreventActions from '../components/usePreventActions';
 import Swal from 'sweetalert2';
 
 const StudentFullInformationForm = () => {
@@ -17,81 +16,79 @@ const StudentFullInformationForm = () => {
 
     // Convert mobile numbers to +880 format for consistency
 
-    const regex = /^[1-9][0-9]{9}$/;
+    // const regex = /^[1-9][0-9]{9}$/;
 
-    if (!regex.test(data.studentMobile)) {
-      Swal.fire({
-        position: "center",
-        icon: "error",
+    // Student Number
+    if (data.studentMobile.length !== 10) {
+      console.log(data.studentMobile.length);
+      return Swal.fire({
+        position: 'center',
+        icon: 'error',
         title: `ছাত্র/ছাত্রীর নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
         showConfirmButton: false,
-        timer: 2000
+        timer: 1500,
       });
-
-      input.focus();
-    } else {
-      data.studentMobile = `+880${data.studentMobile}`
-      // allow submit
     }
 
-    if (!regex.test(data.fatherMobile)) {
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: `বাবার নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+    // motherMobile
+    if (data.motherMobile.length !== 10) {
+      console.log(data.motherMobile.length);
+      return Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: `মা' এর নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
         showConfirmButton: false,
-        timer: 2000
+        timer: 1500,
       });
-      input.focus();
-    } else {
-      data.fatherMobile = `+880${data.fatherMobile}`
-      // allow submit
     }
 
-    if (!regex.test(data.motherMobile)) {
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: `মা'তার নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+    // fatherMobile
+    if (data.fatherMobile.length !== 10) {
+      console.log(data.fatherMobile.length);
+      return Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: `বাবা'র নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
         showConfirmButton: false,
-        timer: 2000
+        timer: 1500,
       });
-      input.focus();
-    } else {
-      data.motherMobile = `+880${data.motherMobile}`
-      // allow submit
     }
-
-    if (!regex.test(data.officeNumber)) {
-      Swal.fire({
-        position: "center",
-        icon: "error",
+    // officeNumber
+    if (data.officeNumber.length !== 10) {
+      console.log(data.officeNumber.length);
+      return Swal.fire({
+        position: 'center',
+        icon: 'error',
         title: `অফিস নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
         showConfirmButton: false,
-        timer: 2000
+        timer: 1500,
       });
-      input.focus();
-    } else {
-      data.officeNumber = `+880${data.officeNumber}`
-      // allow submit
     }
-    if (!regex.test(data.studentAnotherNumber)) {
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: `ছাত্র/ছাত্রীর বিকল্প নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
+    // studentAnotherNumber
+    if (data.studentAnotherNumber.length !== 10) {
+      console.log(data.studentAnotherNumber.length);
+      return Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: `ছাত্র/ছাত্রীর ২য় নাম্বার অবশ্যই ১০ ডিজিট এবং প্রথম সংখ্যা ০ ছাড়া হবে।`,
         showConfirmButton: false,
-        timer: 2000
+        timer: 1500,
       });
-      input.focus();
-    } else {
-      data.studentAnotherNumber = `+880${data.studentAnotherNumber}`
-      // allow submit
     }
 
+    // Address
+    data.dob = data.dob.toString();
+    data.fatherDOB = data.fatherDOB.toString();
+    data.motherDOB = data.motherDOB.toString();
+    data.siblingDOB = data.siblingDOB.toString();
+
+    data.studentMobile = `+880${data.studentMobile}`;
+    data.motherMobile = `+880${data.motherMobile}`;
+    data.fatherMobile = `+880${data.fatherMobile}`;
+    data.officeNumber = `+880${data.officeNumber}`;
+    data.studentAnotherNumber = `+880${data.studentAnotherNumber}`;
 
     const webAppUrl = `${baseURL}/api/data/`; // Backend proxy URL
-    console.log(webAppUrl);
 
     setLoading(true);
 
@@ -105,14 +102,13 @@ const StudentFullInformationForm = () => {
       });
       const result = await response.json();
 
-
       if (result.success) {
         Swal.fire({
-          position: "center",
-          icon: "success",
+          position: 'center',
+          icon: 'success',
           title: `Data Submitted Successfully!`,
           showConfirmButton: false,
-          timer: 1500
+          timer: 1500,
         });
         // Redirect user to print preview page after 2 seconds
         setTimeout(() => {
@@ -127,21 +123,21 @@ const StudentFullInformationForm = () => {
     }
   };
   return (
-    <div className='max-w-5xl mx-auto text-left p-2 shadow-lg  shadow-gray-300'>
+    <div className='max-w-5xl p-2 mx-auto text-left shadow-lg shadow-gray-300'>
       {/* Card */}
-      <div className='bg-white shadow-lg rounded-xl p-6 space-y-8'>
-        <h1 className='text-center text-lg sm:text-2xl font-bold border-b pb-4'>
+      <div className='p-6 space-y-8 bg-white shadow-lg rounded-xl'>
+        <h1 className='pb-4 text-lg font-bold text-center border-b sm:text-2xl'>
           STUDENT'S INFORMATION FOR DOCUMENT
         </h1>
 
         {/* Student's Information Section - Image 1 */}
         <section>
-          <h2 className='bg-gray-900 text-white text-sm sm:text-base px-3 py-2 rounded-md mb-4 font-semibold'>
+          <h2 className='px-3 py-2 mb-4 text-sm font-semibold text-white bg-gray-900 rounded-md sm:text-base'>
             Student's Information
           </h2>
 
           <form onSubmit={handleSubmit}>
-            <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
               {/* Student's Name (Required) */}
               <div className='space-y-1'>
                 <label
@@ -273,15 +269,15 @@ const StudentFullInformationForm = () => {
                     type='date'
                     id='dob'
                     name='dob'
-                    placeholder='mm/dd/yyyy'
-                    className='input pr-10'
+                    placeholder='yyyy/mm/dd'
+                    className='pr-10 input'
                   />
                 </div>
               </div>
             </div>
 
             {/* Present Address */}
-            <div className='space-y-1 mt-4'>
+            <div className='mt-4 space-y-1'>
               <label
                 htmlFor='present-address'
                 className='block text-sm font-medium text-gray-700'
@@ -292,12 +288,12 @@ const StudentFullInformationForm = () => {
                 id='present-address'
                 name='presentAddress'
                 placeholder='নিজের বর্তমান ঠিকানা'
-                className='input h-20 resize-none'
+                className='h-14 resize-none input'
               ></textarea>
             </div>
 
             {/* Permanent Address */}
-            <div className='space-y-1 mt-4'>
+            <div className='mt-4 space-y-1'>
               <label
                 htmlFor='permanent-address'
                 className='block text-sm font-medium text-gray-700'
@@ -308,7 +304,7 @@ const StudentFullInformationForm = () => {
                 id='permanent-address'
                 name='permanentAddress'
                 placeholder='পাসপোর্ট/জন্মনিবন্ধন অনুযায়ী স্থায়ী ঠিকানা'
-                className='input h-20 resize-none'
+                className='h-14 resize-none input'
               ></textarea>
             </div>
 
@@ -316,10 +312,10 @@ const StudentFullInformationForm = () => {
 
             {/* Guarantor’s (Sponsor’s) Information Section - Image 2 */}
             <section className='mt-12'>
-              <h2 className='bg-gray-900 text-white text-sm sm:text-base px-3 py-2 rounded-md mb-4 font-semibold'>
+              <h2 className='px-3 py-2 mb-4 text-sm font-semibold text-white bg-gray-900 rounded-md sm:text-base'>
                 Guarantor’s (Sponsor’s) Information
               </h2>
-              <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+              <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
                 <div className='space-y-1'>
                   <label
                     htmlFor='sponsor-name'
@@ -364,7 +360,7 @@ const StudentFullInformationForm = () => {
                 </div>
               </div>
 
-              <div className='space-y-1 mt-4'>
+              <div className='mt-4 space-y-1'>
                 <label
                   htmlFor='sponsor-permanent-address'
                   className='block text-sm font-medium text-gray-700'
@@ -374,10 +370,10 @@ const StudentFullInformationForm = () => {
                 <textarea
                   id='sponsor-permanent-address'
                   name='sponsorPermanentAddress'
-                  className='input h-20 resize-none'
+                  className='h-14 resize-none input'
                 ></textarea>
               </div>
-              <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4'>
+              <div className='grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2'>
                 <div className='space-y-1'>
                   <label
                     htmlFor='business-name'
@@ -407,7 +403,7 @@ const StudentFullInformationForm = () => {
                   />
                 </div>
               </div>
-              <div className='space-y-1 mt-4'>
+              <div className='mt-4 space-y-1'>
                 <label
                   htmlFor='business-address'
                   className='block text-sm font-medium text-gray-700'
@@ -417,10 +413,10 @@ const StudentFullInformationForm = () => {
                 <textarea
                   id='business-address'
                   name='businessAddress'
-                  className='input h-20 resize-none'
+                  className='h-14 resize-none input'
                 ></textarea>
               </div>
-              <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4'>
+              <div className='grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2'>
                 <div className='space-y-1'>
                   <label
                     htmlFor='office-number'
@@ -464,20 +460,20 @@ const StudentFullInformationForm = () => {
 
             {/* Family Information Section - Image 3 */}
             <section className='my-12'>
-              <h2 className='bg-gray-900 text-white text-sm sm:text-base px-3 py-2 rounded-md mb-4 font-semibold '>
+              <h2 className='px-3 py-2 mb-4 text-sm font-semibold text-white bg-gray-900 rounded-md sm:text-base '>
                 Family Information
               </h2>
               <div className='overflow-x-auto'>
                 <table className='min-w-full bg-white border border-gray-200 rounded-md'>
                   <thead>
-                    <tr className='bg-gray-50 text-left  text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                    <tr className='text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50'>
                       <th className='px-6 py-3 border-2 border-gray-200'>
                         Name
                       </th>
                       <th className='px-6 py-3 border-2 border-gray-200'>
                         Relation
                       </th>
-                      <th className='px-6 py-3 border-2  border-gray-200'>
+                      <th className='px-6 py-3 border-2 border-gray-200'>
                         Date of Birth
                       </th>
                       <th className='px-6 py-3 border-2 border-gray-200'>
@@ -488,7 +484,7 @@ const StudentFullInformationForm = () => {
                   <tbody>
                     {/* Row 1: Father */}
                     <tr>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <input
                           type='text'
                           name='fatherNameFamily'
@@ -496,7 +492,7 @@ const StudentFullInformationForm = () => {
                           className='input min-w-[120px]'
                         />
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <input
                           type='text'
                           value='Father'
@@ -504,17 +500,17 @@ const StudentFullInformationForm = () => {
                           className='input bg-gray-50 min-w-[100px]'
                         />
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <div className='relative'>
                           <input
                             type='date'
                             name='fatherDOB'
-                            placeholder='mm/dd/yyyy'
+                            placeholder='yyyy/mm/dd'
                             className='input pr-10 min-w-[120px]'
                           />
                         </div>
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <input
                           type='text'
                           name='fatherOccupation'
@@ -525,7 +521,7 @@ const StudentFullInformationForm = () => {
                     </tr>
                     {/* Row 2: Mother */}
                     <tr>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <input
                           type='text'
                           name='motherNameFamily'
@@ -533,7 +529,7 @@ const StudentFullInformationForm = () => {
                           className='input min-w-[120px]'
                         />
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <input
                           type='text'
                           value='Mother'
@@ -541,17 +537,17 @@ const StudentFullInformationForm = () => {
                           className='input bg-gray-50 min-w-[100px]'
                         />
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <div className='relative'>
                           <input
                             type='date'
                             name='motherDOB'
-                            placeholder='mm/dd/yyyy'
+                            placeholder='yyyy/mm/dd'
                             className='input pr-10 min-w-[120px]'
                           />
                         </div>
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border border-gray-200'>
+                      <td className='px-6 py-4 border border-gray-200 whitespace-nowrap'>
                         <input
                           type='text'
                           name='motherOccupation'
@@ -562,35 +558,33 @@ const StudentFullInformationForm = () => {
                     </tr>
                     {/* Row 3: Brother/Sister */}
                     <tr>
-                      <td className='px-6 py-4 whitespace-nowrap border'>
+                      <td className='px-6 py-4 border whitespace-nowrap'>
                         <input
                           type='text'
                           name='siblingName'
                           placeholder='ভাইবোনের নাম'
                           className='input min-w-[120px]'
                         />
-
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border'>
+                      <td className='px-6 py-4 border whitespace-nowrap'>
                         <input
                           type='text'
                           value='Brother/Sister'
                           readOnly
                           className='input bg-gray-50 min-w-[100px]'
                         />
-
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border'>
+                      <td className='px-6 py-4 border whitespace-nowrap'>
                         <div className='relative'>
                           <input
                             type='date'
                             name='siblingDOB'
-                            placeholder='mm/dd/yyyy'
+                            placeholder='yyyy/mm/dd'
                             className='input pr-10 min-w-[120px]'
                           />
                         </div>
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap border'>
+                      <td className='px-6 py-4 border whitespace-nowrap'>
                         <input
                           type='text'
                           name='siblingOccupation'
@@ -606,24 +600,24 @@ const StudentFullInformationForm = () => {
 
             {/* Educational Record Section - Image 4 */}
             <section>
-              <h2 className='bg-gray-900 text-white text-sm sm:text-base px-3 py-2 rounded-md mb-4 font-semibold'>
+              <h2 className='px-3 py-2 mb-4 text-sm font-semibold text-white bg-gray-900 rounded-md sm:text-base'>
                 Educational Record
               </h2>
               <div className='overflow-x-auto'>
                 <table className='min-w-full bg-white border border-gray-200 rounded-md degreeTable'>
                   <thead>
-                    <tr className='bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                    <tr className='text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50'>
                       <th className='px-6 py-3 border border-gray-200'>
                         Degree
                       </th>
-                      <th className='px-6 py-3 border  border-gray-200'>
+                      <th className='px-6 py-3 border border-gray-200'>
                         Name of School
                       </th>
                       <th className='px-6 py-3 border border-gray-200'>
                         School Address
                       </th>
 
-                      <th className='px-6 py-3   border  border-gray-200'>
+                      <th className='px-6 py-3 border border-gray-200'>
                         Graduation Year
                       </th>
                     </tr>
@@ -633,8 +627,9 @@ const StudentFullInformationForm = () => {
                       (degree, index) => (
                         <tr key={degree}>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : ''
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : ''
+                            }`}
                           >
                             <input
                               type='text'
@@ -645,8 +640,9 @@ const StudentFullInformationForm = () => {
                           </td>
 
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : 'border'
+                            }`}
                           >
                             <input
                               type='text'
@@ -655,8 +651,9 @@ const StudentFullInformationForm = () => {
                             />
                           </td>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : 'border'
+                            }`}
                           >
                             <div className='relative'>
                               <input
@@ -667,15 +664,16 @@ const StudentFullInformationForm = () => {
                             </div>
                           </td>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : 'border'
+                            }`}
                           >
                             <div className='relative'>
                               <input
                                 type='date'
                                 name={`${degree}GraduationYear`}
                                 placeholder='dd/mm/yyyy'
-                                pattern="\d{2}-\d{2-\d{4}"
+                                pattern='\d{2}-\d{2-\d{4}'
                                 className='input  pr-10 min-w-[120px]'
                               />
                             </div>
@@ -690,10 +688,10 @@ const StudentFullInformationForm = () => {
 
             {/* Student Running Academic Details Section - Image 5 */}
             <section className='my-12'>
-              <h2 className='bg-gray-900 text-white text-sm sm:text-base px-3 py-2 rounded-md mb-4 font-semibold'>
+              <h2 className='px-3 py-2 mb-4 text-sm font-semibold text-white bg-gray-900 rounded-md sm:text-base'>
                 Student Running Academic Details
               </h2>
-              <div className='space-y-1 mb-4'>
+              <div className='mb-4 space-y-1'>
                 <label
                   htmlFor='college-university-name'
                   className='block text-sm font-medium text-gray-700'
@@ -708,7 +706,7 @@ const StudentFullInformationForm = () => {
                   className='input'
                 />
               </div>
-              <div className='space-y-1 mb-4'>
+              <div className='mb-4 space-y-1'>
                 <label
                   htmlFor='college-university-name'
                   className='block text-sm font-medium text-gray-700'
@@ -724,7 +722,7 @@ const StudentFullInformationForm = () => {
                 />
               </div>
 
-              <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+              <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
                 <div className='space-y-1'>
                   <label
                     htmlFor='subject'
@@ -795,7 +793,6 @@ const StudentFullInformationForm = () => {
                     className='input'
                   />
                 </div>
-
               </div>
             </section>
 
@@ -803,26 +800,26 @@ const StudentFullInformationForm = () => {
 
             {/* Japanese Language Test (N5/N4) Section - Image 6 */}
             <section>
-              <h2 className='bg-gray-900 text-white text-sm sm:text-base px-3 py-2 rounded-md mb-4 font-semibold'>
+              <h2 className='px-3 py-2 mb-4 text-sm font-semibold text-white bg-gray-900 rounded-md sm:text-base'>
                 Japanese Language Test (N5/N4)
               </h2>
               <div className='overflow-x-auto'>
                 <table className='min-w-full bg-white border border-gray-200 rounded-md languageTest'>
                   <thead>
-                    <tr className='bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
-                      <th className='px-6 py-3   border border-gray-200'>
+                    <tr className='text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50'>
+                      <th className='px-6 py-3 border border-gray-200'>
                         Test Name
                       </th>
-                      <th className='px-6 py-3   border border-gray-200'>
+                      <th className='px-6 py-3 border border-gray-200'>
                         Score
                       </th>
-                      <th className='px-6 py-3   border border-gray-200'>
+                      <th className='px-6 py-3 border border-gray-200'>
                         Exam Date
                       </th>
-                      <th className='px-6 py-3   border border-gray-200 whitespace-nowrap'>
+                      <th className='px-6 py-3 border border-gray-200 whitespace-nowrap'>
                         Result Publish Date
                       </th>
-                      <th className='px-6 py-3   border border-gray-200 whitespace-nowrap'>
+                      <th className='px-6 py-3 border border-gray-200 whitespace-nowrap'>
                         Expected Exam Date
                       </th>
                     </tr>
@@ -832,8 +829,9 @@ const StudentFullInformationForm = () => {
                       (testName, index) => (
                         <tr key={testName}>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border-b border-gray-200' : ''
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border-b border-gray-200' : ''
+                            }`}
                           >
                             <input
                               type='text'
@@ -843,8 +841,9 @@ const StudentFullInformationForm = () => {
                             />
                           </td>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : 'border'
+                            }`}
                           >
                             <input
                               type='text'
@@ -853,40 +852,43 @@ const StudentFullInformationForm = () => {
                             />
                           </td>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : 'border'
+                            }`}
                           >
                             <div className='relative'>
                               <input
                                 type='date'
                                 name={`${testName}ExamDate`}
-                                placeholder='mm/dd/yyyy'
+                                placeholder='yyyy/mm/dd'
                                 className='input pr-10 min-w-[120px]'
                               />
                             </div>
                           </td>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : 'border'
+                            }`}
                           >
                             <div className='relative'>
                               <input
                                 type='date'
                                 name={`${testName}ResultPublishDate`}
-                                placeholder='mm/dd/yyyy'
+                                placeholder='yyyy/mm/dd'
                                 className='input pr-10 min-w-[120px]'
                               />
                             </div>
                           </td>
                           <td
-                            className={`px-6 py-4 whitespace-nowrap ${index < 4 ? 'border border-gray-200' : 'border'
-                              }`}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              index < 4 ? 'border border-gray-200' : 'border'
+                            }`}
                           >
                             <div className='relative'>
                               <input
                                 type='date'
                                 name={`${testName}ExpectedExamDate`}
-                                placeholder='mm/dd/yyyy'
+                                placeholder='yyyy/mm/dd'
                                 className='input pr-10 min-w-[120px]'
                               />
                             </div>
@@ -900,10 +902,10 @@ const StudentFullInformationForm = () => {
             </section>
 
             {/* Submit Button */}
-            <div className='text-center mt-8'>
+            <div className='mt-8 text-center'>
               <button
                 type='submit'
-                className='bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-md'
+                className='px-6 py-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700'
                 disabled={loading}
               >
                 {loading ? 'Submitting...' : 'Submit Information'}
@@ -912,7 +914,7 @@ const StudentFullInformationForm = () => {
           </form>
         </section>
 
-        <p className='text-center text-sm text-red-600 mt-6 bg-red-50 p-3 rounded-md border border-red-200'>
+        <p className='p-3 mt-6 text-sm text-center text-red-600 border border-red-200 rounded-md bg-red-50'>
           বি.দ্র.: এই ফর্মটির সকল তথ্য অবশ্যই পূরণ করতে হবে। কোন কিছু না বুঝতে
           পারলে সংশ্লিষ্ট ব্যক্তির কাছ থেকে বুঝে নিতে হবে এবং সকল তথ্য ইংরেজিতে
           পূরণীয়।
