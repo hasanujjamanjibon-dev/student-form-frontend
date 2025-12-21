@@ -75,18 +75,32 @@ const StudentFullInformationForm = () => {
         timer: 1500,
       });
     }
-
+    if (
+      data.studentMobile === data.studentAnotherNumber ||
+      data.motherMobile === data.studentAnotherNumber ||
+      data.fatherMobile === data.studentAnotherNumber ||
+      data.officeNumber === data.studentAnotherNumber
+    ) {
+      return Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title:
+          'ছাত্র/ছাত্রীর নাম্বার একই দেওয়া যাবেনা, ছাত্র/ছাত্রীর ভিন্ন নাম্বার দিতে হবে।',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
     // Address
     data.dob = data.dob.toString();
     data.fatherDOB = data.fatherDOB.toString();
     data.motherDOB = data.motherDOB.toString();
     data.siblingDOB = data.siblingDOB.toString();
 
-    data.studentMobile = `+880${data.studentMobile}`;
-    data.motherMobile = `+880${data.motherMobile}`;
-    data.fatherMobile = `+880${data.fatherMobile}`;
-    data.officeNumber = `+880${data.officeNumber}`;
-    data.studentAnotherNumber = `+880${data.studentAnotherNumber}`;
+    data.studentMobile = `0${data.studentMobile}`;
+    data.motherMobile = `0${data.motherMobile}`;
+    data.fatherMobile = `0${data.fatherMobile}`;
+    data.officeNumber = `0${data.officeNumber}`;
+    data.studentAnotherNumber = `0${data.studentAnotherNumber}`;
 
     const webAppUrl = `${baseURL}/api/data/`; // Backend proxy URL
 
