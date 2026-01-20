@@ -6,21 +6,15 @@ const StudentFullInformationForm = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const baseURL = import.meta.env.VITE_baseURL;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const form = event.target;
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => (data[key] = value));
 
-    // Convert mobile numbers to +880 format for consistency
-
-    // const regex = /^[1-9][0-9]{9}$/;
-
-    // Student Number
     if (data.studentMobile.length !== 10) {
-      console.log(data.studentMobile.length);
       return Swal.fire({
         position: 'center',
         icon: 'error',
@@ -32,7 +26,6 @@ const StudentFullInformationForm = () => {
 
     // motherMobile
     if (data.motherMobile.length !== 10) {
-      console.log(data.motherMobile.length);
       return Swal.fire({
         position: 'center',
         icon: 'error',
@@ -44,7 +37,6 @@ const StudentFullInformationForm = () => {
 
     // fatherMobile
     if (data.fatherMobile.length !== 10) {
-      console.log(data.fatherMobile.length);
       return Swal.fire({
         position: 'center',
         icon: 'error',
@@ -53,9 +45,9 @@ const StudentFullInformationForm = () => {
         timer: 1500,
       });
     }
+
     // officeNumber
     if (data.officeNumber.length !== 10) {
-      console.log(data.officeNumber.length);
       return Swal.fire({
         position: 'center',
         icon: 'error',
@@ -66,7 +58,6 @@ const StudentFullInformationForm = () => {
     }
     // studentAnotherNumber
     if (data.studentAnotherNumber.length !== 10) {
-      console.log(data.studentAnotherNumber.length);
       return Swal.fire({
         position: 'center',
         icon: 'error',
@@ -103,9 +94,7 @@ const StudentFullInformationForm = () => {
     data.studentAnotherNumber = `0${data.studentAnotherNumber}`;
 
     const webAppUrl = `${baseURL}/api/data/`; // Backend proxy URL
-
     setLoading(true);
-
     try {
       const response = await fetch(webAppUrl, {
         method: 'POST',
@@ -136,6 +125,7 @@ const StudentFullInformationForm = () => {
       setLoading(false);
     }
   };
+
   return (
     <div className='max-w-5xl p-2 mx-auto text-left shadow-lg shadow-gray-300'>
       {/* Card */}

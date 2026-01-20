@@ -1,12 +1,12 @@
 import { useLocation, useSearchParams } from 'react-router-dom';
-import usePreventActions from '../components/usePreventActions';
+
 import { useEffect, useState } from 'react';
 import PrintingButton from '../components/PrintingButton';
 import { Atom } from 'react-loading-indicators';
 
 export default function PrintPreview() {
   const location = useLocation();
-  usePreventActions();
+
   const [searchParams] = useSearchParams();
   const [data, setData] = useState(null);
 
@@ -161,21 +161,21 @@ export default function PrintPreview() {
                   <td className='p-1 border-r-2 font-bold bg-[#F2F2F2] border-[#b3b2b2]'>
                     Student's Name:
                   </td>
-                  <td className='p-1'>
+                  <td className='p-1' style={{ width: '40%' }}>
                     <input
                       readOnly
                       defaultValue={studentName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize'
+                      className='w-full px-2 text-base rounded outline-none capitalize'
                     />
                   </td>
-                  <td className='p-1 border-x-2 font-bold bg-[#F2F2F2] text-center border-[#b3b2b2]'>
+                  <td className='p-1 w-auto border-x-2 font-bold bg-[#F2F2F2] text-center border-[#b3b2b2]'>
                     Mobile:
                   </td>
                   <td className='p-1'>
                     <input
                       readOnly
                       defaultValue={studentMobile}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize'
                     />
                   </td>
                 </tr>
@@ -187,7 +187,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={fatherName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td className='p-1 border-x-2 font-bold bg-[#F2F2F2] text-center border-[#b3b2b2]'>
@@ -197,7 +197,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={fatherMobile}
-                      className='w-full px-2 text-lg rounded outline-none capitalize'
+                      className='w-full px-2 text-base rounded outline-none capitalize'
                     />
                   </td>
                 </tr>
@@ -209,7 +209,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={motherName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td className='p-1 border-x-2 font-bold bg-[#F2F2F2] text-center border-[#b3b2b2]'>
@@ -219,7 +219,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={motherMobile}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -232,7 +232,7 @@ export default function PrintPreview() {
                       readOnly
                       defaultValue={studentDob}
                       type='text'
-                      className='w-full px-2 text-lg rounded outline-none capitalize text'
+                      className='w-full px-2 text-base rounded outline-none capitalize text'
                     />
                   </td>
                 </tr>
@@ -241,10 +241,10 @@ export default function PrintPreview() {
                     Present Address:
                   </td>
                   <td className='p-1' colSpan='3'>
-                    <input
+                    <textarea
                       readOnly
                       defaultValue={presentAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -253,10 +253,10 @@ export default function PrintPreview() {
                     Permanent Address:
                   </td>
                   <td className='p-1' colSpan='3'>
-                    <input
+                    <textarea
                       readOnly
                       defaultValue={permanentAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -279,7 +279,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={sponsorName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -291,7 +291,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={sponsorFatherName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -303,7 +303,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={sponsorMotherName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -312,10 +312,10 @@ export default function PrintPreview() {
                     Permanent Address:
                   </td>
                   <td className='p-1' colSpan='3'>
-                    <input
+                    <textarea
                       readOnly
                       defaultValue={sponsorPermanentAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -327,7 +327,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={businessName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td className='p-1 border-x-2 border-[#b3b2b2] font-bold  text-center bg-[#F2F2F2]'>
@@ -337,7 +337,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={businessType}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -349,7 +349,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={businessAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -361,7 +361,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={officeNumber}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td className='p-1 border-x-2 border-[#b3b2b2] font-bold text-center   bg-[#F2F2F2]'>
@@ -371,7 +371,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={studentAnotherNumber}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -398,7 +398,7 @@ export default function PrintPreview() {
                       <input
                         readOnly
                         defaultValue={fatherNameFamily}
-                        className='w-full px-2 text-lg rounded outline-none capitalize '
+                        className='w-full px-2 text-base rounded outline-none capitalize '
                       />
                     </td>
                     <td className='p-1 border border-black'>Father</td>
@@ -406,14 +406,14 @@ export default function PrintPreview() {
                       <input
                         readOnly
                         defaultValue={fatherDob}
-                        className='w-full px-2 text-lg rounded outline-none capitalize text-center'
+                        className='w-full px-2 text-base rounded outline-none capitalize text-center'
                       />
                     </td>
                     <td className='p-1 border border-black'>
                       <input
                         readOnly
                         defaultValue={fatherOccupation}
-                        className='w-full px-2 text-lg rounded outline-none capitalize '
+                        className='w-full px-2 text-base rounded outline-none capitalize '
                       />
                     </td>
                   </tr>
@@ -422,7 +422,7 @@ export default function PrintPreview() {
                       <input
                         readOnly
                         defaultValue={motherNameFamily}
-                        className='w-full px-2 text-lg rounded outline-none capitalize '
+                        className='w-full px-2 text-base rounded outline-none capitalize '
                       />
                     </td>
                     <td className='p-1 border border-black'>Mother</td>
@@ -430,14 +430,14 @@ export default function PrintPreview() {
                       <input
                         readOnly
                         defaultValue={motherDob}
-                        className='w-full px-2 text-lg rounded outline-none capitalize  text-center'
+                        className='w-full px-2 text-base rounded outline-none capitalize  text-center'
                       />
                     </td>
                     <td className='p-1 border border-black'>
                       <input
                         readOnly
                         defaultValue={motherOccupation}
-                        className='w-full px-2 text-lg rounded outline-none capitalize '
+                        className='w-full px-2 text-base rounded outline-none capitalize '
                       />
                     </td>
                   </tr>
@@ -446,7 +446,7 @@ export default function PrintPreview() {
                       <input
                         readOnly
                         defaultValue={siblingName}
-                        className='w-full px-2 text-lg rounded outline-none capitalize  '
+                        className='w-full px-2 text-base rounded outline-none capitalize  '
                       />
                     </td>
                     <td className='p-1 border border-black'>Brother/Sister</td>
@@ -454,14 +454,14 @@ export default function PrintPreview() {
                       <input
                         readOnly
                         defaultValue={siblingDob}
-                        className='w-full px-2 text-lg rounded outline-none capitalize text-center'
+                        className='w-full px-2 text-base rounded outline-none capitalize text-center'
                       />
                     </td>
                     <td className='p-1 border border-black'>
                       <input
                         readOnly
                         defaultValue={siblingOccupation}
-                        className='w-full px-2 text-lg rounded outline-none capitalize '
+                        className='w-full px-2 text-base rounded outline-none capitalize '
                       />
                     </td>
                   </tr>
@@ -501,21 +501,21 @@ export default function PrintPreview() {
                     <textarea
                       readOnly
                       defaultValue={PrimarySchoolName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <textarea
                       readOnly
                       defaultValue={PrimarySchoolAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={primaryGraduationYear}
-                      className='w-full px-2 text-lg rounded outline-none capitalize text-center'
+                      className='w-full px-2 text-base rounded outline-none capitalize text-center'
                     />
                   </td>
                 </tr>
@@ -530,21 +530,21 @@ export default function PrintPreview() {
                     <textarea
                       readOnly
                       defaultValue={SSCSchoolName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <textarea
                       readOnly
                       defaultValue={SSCSchoolAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={sSCGraduationYear}
-                      className='w-full px-2 text-lg rounded outline-none capitalize text-center'
+                      className='w-full px-2 text-base rounded outline-none capitalize text-center'
                     />
                   </td>
                 </tr>
@@ -559,21 +559,21 @@ export default function PrintPreview() {
                     <textarea
                       readOnly
                       defaultValue={HSC_DiplomaSchoolName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <textarea
                       readOnly
                       defaultValue={HSC_DiplomaSchoolAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={hSC_DiplomaGraduationYear}
-                      className='w-full px-2 text-lg rounded outline-none capitalize text-center'
+                      className='w-full px-2 text-base rounded outline-none capitalize text-center'
                     />
                   </td>
                 </tr>
@@ -588,21 +588,21 @@ export default function PrintPreview() {
                     <textarea
                       readOnly
                       defaultValue={HonorsSchoolName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <textarea
                       readOnly
                       defaultValue={HonorsSchoolAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={honorsGraduationYear}
-                      className='w-full px-2 text-lg rounded outline-none capitalize text-center'
+                      className='w-full px-2 text-base rounded outline-none capitalize text-center'
                     />
                   </td>
                 </tr>
@@ -617,21 +617,21 @@ export default function PrintPreview() {
                     <textarea
                       readOnly
                       defaultValue={MastersSchoolName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <textarea
                       readOnly
                       defaultValue={MastersSchoolAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={mastersGraduationYear}
-                      className='w-full px-2 text-lg rounded outline-none capitalize text-center'
+                      className='w-full px-2 text-base rounded outline-none capitalize text-center'
                     />
                   </td>
                 </tr>
@@ -661,35 +661,35 @@ export default function PrintPreview() {
                     <textarea
                       readOnly
                       defaultValue={currentCollegeUniversityName}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={currentSubject}
-                      className='w-full px-2 text-lg rounded outline-none capitalize  resize-none'
+                      className='w-full px-2 text-base rounded outline-none capitalize  resize-none'
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={currentRollNo}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={currentRegistrationNo}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={currentAcademicYear}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -710,7 +710,7 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={currentCollegeUniversityAddress}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -754,28 +754,28 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={JLPTScore}
-                      className='w-full px-2 text-lg text-center rounded outline-none'
+                      className='w-full px-2 text-base text-center rounded outline-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={JLPTExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={JLPTResultPublishDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black '>
                     <input
                       readOnly
                       defaultValue={JLPTExpectedExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -790,28 +790,28 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={NATScore}
-                      className='w-full px-2 text-lg text-center rounded outline-none'
+                      className='w-full px-2 text-base text-center rounded outline-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={NATExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={NATResultPublishDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={NATExpectedExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -826,28 +826,28 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={JLCTScore}
-                      className='w-full px-2 text-lg text-center rounded outline-none'
+                      className='w-full px-2 text-base text-center rounded outline-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={JLCTExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={JLCTResultPublishDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={JLCTExpectedExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -862,28 +862,28 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={J_TestScore}
-                      className='w-full px-2 text-lg text-center rounded outline-none'
+                      className='w-full px-2 text-base text-center rounded outline-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={J_TestExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={J_TestResultPublishDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={J_TestExpectedExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>
@@ -898,28 +898,28 @@ export default function PrintPreview() {
                     <input
                       readOnly
                       defaultValue={Top_JScore}
-                      className='w-full px-2 text-lg text-center rounded outline-none'
+                      className='w-full px-2 text-base text-center rounded outline-none'
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={Top_JExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={Top_JResultPublishDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                   <td colSpan={3} className='p-1 border border-black'>
                     <input
                       readOnly
                       defaultValue={Top_JExpectedExamDate}
-                      className='w-full px-2 text-lg rounded outline-none capitalize '
+                      className='w-full px-2 text-base rounded outline-none capitalize '
                     />
                   </td>
                 </tr>

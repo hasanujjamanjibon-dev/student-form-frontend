@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  user-select: none;
   /* Prevent copy selection */
   font-family: 'Arial', sans-serif;
 }
@@ -27,14 +26,19 @@ body {
   background-attachment: fixed;
   background-position: fixed;
 }
-
+input,
+textarea,
+tr td {
+  text-transform: capitalize !important;
+}
 @media print {
   html,
   body {
     margin: 0;
     padding: 0;
     background-image: none;
-    font-size: 12pt !important;
+    font-size: 11pt !important;
+
     /* transform: scale(1); */
   }
 
